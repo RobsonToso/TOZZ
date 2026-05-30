@@ -1,68 +1,82 @@
-// Smooth scrolling for navigation links
+// Parallax effect
+window.addEventListener('mousemove', (e) => {
+    const parallaxBg = document.querySelectorAll('.parallax-bg');
+    const x = (e.clientX / window.innerWidth) * 20;
+    const y = (e.clientY / window.innerHeight) * 20;
+
+    parallaxBg.forEach((bg, index) => {
+        const speed = bg.style.getPropertyValue('--speed');
+        bg.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+    });
+});
+
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth' });
         }
     });
 });
 
-// Form submission
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+// Card 3D tilt effect
+const cards = document.querySelectorAll('.card-3d');
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
         
-        // Get form values
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const message = this.querySelector('textarea').value;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
         
-        // Here you would typically send this to a backend
-        console.log('Form submitted:', { name, email, message });
+        const rotateX = ((y - centerY) / centerY) * 10;
+        const rotateY = ((x - centerX) / centerX) * 10;
         
-        // Show success message
-        alert('Obrigado pela sua mensagem! Entraremos em contato em breve.');
-        this.reset();
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
-}
-
-// Navbar scroll effect
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
-    } else {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
+    
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+    });
 });
 
-// Animate elements on scroll
+// Scroll animation for elements
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver(function (entries) {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.style.animation = 'slideUp 0.6s ease-out';
         }
     });
 }, observerOptions);
 
-// Apply observer to service cards and feature items
-document.querySelectorAll('.service-card, .feature-item').forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(element);
+document.querySelectorAll('.service-card, .feature-block, .stat-box').forEach(el => {
+    el.style.opacity = '0';
+    observer.observe(el);
 });
 
-console.log('TOZZ - Terminal de Container - Site carregado com sucesso!');
+// Add CSS animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+console.log('🚀 TOZZ Terminal carregado! Prepare-se para voar!');

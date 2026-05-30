@@ -11,7 +11,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1>TOZZ</h1>
+                <div class="logo-3d">TOZZ</div>
                 <p class="tagline">Terminal de Container</p>
             </div>
             <ul class="nav-links">
@@ -23,76 +23,108 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section com Parallax -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Gerenciamento de Containers Simplificado</h1>
-                <p>TOZZ é uma plataforma completa para gerenciar, monitorar e controlar seus containers Docker com uma interface intuitiva e poderosa.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">Começar Agora</button>
-                    <button class="btn btn-secondary">Saiba Mais</button>
-                </div>
+        <div class="stars"></div>
+        <div class="parallax-bg" style="--speed: 0.5;"></div>
+        <div class="parallax-bg" style="--speed: 0.3;"></div>
+        <div class="parallax-bg" style="--speed: 0.1;"></div>
+
+        <div class="hero-content">
+            <div class="floating-container">
+                <h1 class="title-3d">TOZZ</h1>
+                <p class="subtitle">Controle seus Containers como nunca antes</p>
             </div>
-            <div class="hero-illustration">
-                <div class="terminal-box">
+
+            <div class="terminal-hero">
+                <div class="terminal-content">
                     <div class="terminal-header">
                         <div class="dot red"></div>
                         <div class="dot yellow"></div>
                         <div class="dot green"></div>
                     </div>
-                    <div class="terminal-body">
-                        <p>$ docker ps</p>
-                        <p class="success">CONTAINER ID    IMAGE    STATUS</p>
-                        <p>a1b2c3d4e5f6    webapp   Up 2h</p>
-                        <p>f6e5d4c3b2a1    db       Up 5h</p>
+                    <div class="terminal-code">
+                        <p>$ <span class="command">docker ps -a</span></p>
+                        <p class="output">CONTAINER ID        IMAGE               STATUS</p>
+                        <p class="output">a1b2c3d4e5f6        tozz/api            Up 2 hours</p>
+                        <p class="output">f6e5d4c3b2a1        tozz/db             Up 5 hours</p>
+                        <p class="output">xyz7890pqr12        nginx/latest        Up 12 hours</p>
+                        <p>$ <span class="blink">_</span></p>
                     </div>
                 </div>
             </div>
+
+            <div class="cta-buttons">
+                <button class="btn btn-primary glow">Começar Agora</button>
+                <button class="btn btn-secondary">Saiba Mais</button>
+            </div>
         </div>
+
+        <!-- Animated Shapes -->
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
     </section>
 
     <!-- Services Section -->
     <section id="servicos" class="services">
         <div class="container">
-            <h2>Nossos Serviços</h2>
-            <p class="section-subtitle">Tudo que você precisa para gerenciar containers</p>
-            
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">Tudo que você precisa</p>
+
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📦</div>
-                    <h3>Gerenciamento de Containers</h3>
-                    <p>Liste, crie, inicie, pare e remova containers com alguns cliques. Interface simples e intuitiva para controle total.</p>
+                <div class="service-card card-3d">
+                    <div class="card-inner">
+                        <div class="service-icon">📦</div>
+                        <h3>Gerenciamento</h3>
+                        <p>Controle total dos seus containers</p>
+                        <div class="card-shine"></div>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3>Monitoramento em Tempo Real</h3>
-                    <p>Acompanhe uso de CPU, memória e rede dos seus containers. Alertas automáticos para anomalias detectadas.</p>
+                <div class="service-card card-3d">
+                    <div class="card-inner">
+                        <div class="service-icon">📊</div>
+                        <h3>Monitoramento</h3>
+                        <p>Acompanhe em tempo real</p>
+                        <div class="card-shine"></div>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
-                    <h3>Visualização de Logs</h3>
-                    <p>Acesse logs de containers em tempo real com filtros avançados. Histórico completo e exportação de dados.</p>
+                <div class="service-card card-3d">
+                    <div class="card-inner">
+                        <div class="service-icon">📋</div>
+                        <h3>Logs</h3>
+                        <p>Visualize todos os eventos</p>
+                        <div class="card-shine"></div>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🖥️</div>
-                    <h3>Terminal Interativo</h3>
-                    <p>Execute comandos dentro de containers sem sair da plataforma. Terminal web totalmente funcional e responsivo.</p>
+                <div class="service-card card-3d">
+                    <div class="card-inner">
+                        <div class="service-icon">🖥️</div>
+                        <h3>Terminal</h3>
+                        <p>Execute comandos direto</p>
+                        <div class="card-shine"></div>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🏗️</div>
-                    <h3>Gerenciamento de Imagens</h3>
-                    <p>Organize, inspecione e gerencie suas imagens Docker. Pull, push e build com suporte a registros privados.</p>
+                <div class="service-card card-3d">
+                    <div class="card-inner">
+                        <div class="service-icon">🏗️</div>
+                        <h3>Imagens</h3>
+                        <p>Gerencie suas imagens Docker</p>
+                        <div class="card-shine"></div>
+                    </div>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🔐</div>
-                    <h3>Segurança e Acesso</h3>
-                    <p>Controle de acesso baseado em roles. Autenticação segura e auditoria de todas as operações realizadas.</p>
+                <div class="service-card card-3d">
+                    <div class="card-inner">
+                        <div class="service-icon">🔐</div>
+                        <h3>Segurança</h3>
+                        <p>Controle de acesso avançado</p>
+                        <div class="card-shine"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,39 +133,65 @@
     <!-- Features Section -->
     <section id="recursos" class="features">
         <div class="container">
-            <h2>Recursos Principais</h2>
-            
-            <div class="features-list">
-                <div class="feature-item">
+            <h2 class="section-title">Recursos Incríveis</h2>
+
+            <div class="features-container">
+                <div class="feature-block">
                     <div class="feature-number">01</div>
-                    <div class="feature-content">
-                        <h3>Dashboard Intuitivo</h3>
-                        <p>Visualize todos os seus containers, volumes e redes em um único dashboard. Informações em tempo real com gráficos e estatísticas.</p>
-                    </div>
+                    <h3>Dashboard 360°</h3>
+                    <p>Visualize tudo em um único lugar com gráficos interativos</p>
+                    <div class="feature-icon">📈</div>
                 </div>
 
-                <div class="feature-item">
+                <div class="feature-block">
                     <div class="feature-number">02</div>
-                    <div class="feature-content">
-                        <h3>Multi-Host Support</h3>
-                        <p>Gerencie múltiplos hosts Docker de uma única interface. Alternância rápida entre ambientes de desenvolvimento, teste e produção.</p>
-                    </div>
+                    <h3>Multi-Host</h3>
+                    <p>Gerencie múltiplos servidores simultaneamente</p>
+                    <div class="feature-icon">🌐</div>
                 </div>
 
-                <div class="feature-item">
+                <div class="feature-block">
                     <div class="feature-number">03</div>
-                    <div class="feature-content">
-                        <h3>API REST Completa</h3>
-                        <p>Integre com suas ferramentas favoritas usando nossa API REST documentada. Webhooks para automação avançada.</p>
-                    </div>
+                    <h3>API Poderosa</h3>
+                    <p>Integre com qualquer sistema facilmente</p>
+                    <div class="feature-icon">⚙️</div>
                 </div>
 
-                <div class="feature-item">
+                <div class="feature-block">
                     <div class="feature-number">04</div>
-                    <div class="feature-content">
-                        <h3>Backup e Restauração</h3>
-                        <p>Backup automático de volumes e configurações. Restauração rápida com um clique em caso de problemas.</p>
-                    </div>
+                    <h3>Backup Automático</h3>
+                    <p>Proteja seus dados com backup inteligente</p>
+                    <div class="feature-icon">💾</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stat-item">
+                <div class="stat-box">
+                    <div class="stat-number">50k+</div>
+                    <div class="stat-label">Containers Gerenciados</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-box">
+                    <div class="stat-number">195</div>
+                    <div class="stat-label">Países</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-box">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-box">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Suporte</div>
                 </div>
             </div>
         </div>
@@ -142,50 +200,10 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Pronto para simplificar seu gerenciamento de containers?</h2>
-            <p>Comece a usar TOZZ hoje mesmo e ganhe produtividade</p>
-            <button class="btn btn-primary btn-large">Iniciar Teste Gratuito</button>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contato" class="contact">
-        <div class="container">
-            <h2>Entre em Contato</h2>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <span class="icon">📧</span>
-                        <div>
-                            <h3>Email</h3>
-                            <p>contato@tozz.dev</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <span class="icon">💬</span>
-                        <div>
-                            <h3>Suporte</h3>
-                            <p>Disponível 24/7 para ajudar</p>
-                        </div>
-                    </div>
-
-                    <div class="info-item">
-                        <span class="icon">🌐</span>
-                        <div>
-                            <h3>Comunidade</h3>
-                            <p>Junte-se à nossa comunidade no Discord</p>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact-form">
-                    <input type="text" placeholder="Seu Nome" required>
-                    <input type="email" placeholder="Seu Email" required>
-                    <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
-                </form>
+            <div class="cta-content">
+                <h2>Pronto para revolucionar?</h2>
+                <p>Comece sua jornada com TOZZ agora</p>
+                <button class="btn btn-cta glow">Teste Grátis</button>
             </div>
         </div>
     </section>
@@ -193,44 +211,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>TOZZ</h4>
-                    <p>Terminal de Container</p>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#recursos">Recursos</a></li>
-                        <li><a href="#contato">Contato</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Política de Privacidade</a></li>
-                        <li><a href="#">Termos de Serviço</a></li>
-                        <li><a href="#">Licença</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Redes Sociais</h4>
-                    <div class="social-links">
-                        <a href="#">GitHub</a>
-                        <a href="#">Twitter</a>
-                        <a href="#">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 TOZZ. Todos os direitos reservados.</p>
-            </div>
+            <p>&copy; 2026 TOZZ. Feito com 💜 e muito código.</p>
         </div>
     </footer>
 
